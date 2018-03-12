@@ -26,6 +26,14 @@ for line in file1:
         else:
             tetra1[line[n-4:n]] += 1
 
-for key in tetra.keys():
-    print(key, tetra[key])
+tetra2 = {}
+for line in file2:
+    for n in range(4, len(line)):
+        if line[n-4:n] not in tetra2:
+            tetra2[line[n-4:n]] = 1
+        else:
+            tetra2[line[n-4:n]] += 1
+
+for key in tetra1.keys():
+    print(key, tetra1[key], tetra2[key])
     
