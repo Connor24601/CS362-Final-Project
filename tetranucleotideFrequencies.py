@@ -23,23 +23,25 @@ tetra1 = {}
 num1 = 0.0
 for line in file1:
     #for all tetranucleotides in each contig...
-    for n in range(4, len(line)):
-        num1 += 1.0
-        if line[n-4:n] not in tetra1:
-            tetra1[line[n-4:n]] = 1
-        else:
-            tetra1[line[n-4:n]] += 1
+    if line[0] != ">":
+        for n in range(4, len(line)):
+            num1 += 1.0
+            if line[n-4:n] not in tetra1:
+                tetra1[line[n-4:n]] = 1
+            else:
+                tetra1[line[n-4:n]] += 1
 
 # same thing but for the second file
 tetra2 = {}
 num2 = 0.0
 for line in file2:
-    for n in range(4, len(line)):
-        num2 += 1.0
-        if line[n-4:n] not in tetra2:
-            tetra2[line[n-4:n]] = 1
-        else:
-            tetra2[line[n-4:n]] += 1
+    if line[0] != ">":
+        for n in range(4, len(line)):
+            num2 += 1.0
+            if line[n-4:n] not in tetra2:
+                tetra2[line[n-4:n]] = 1
+            else:
+                tetra2[line[n-4:n]] += 1
 
 
 # divide all the numbers of tetranucleotides by the number of total tetranucleotides, giving us a %.
