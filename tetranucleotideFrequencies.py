@@ -1,3 +1,5 @@
+#Blake Johnson and David Galambos
+
 import sys
 
 try:
